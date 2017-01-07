@@ -1,5 +1,5 @@
 var VideoPlayer = (props) => {
-  // console.log(props.video.id.videoId);
+  // console.log(props.video);
   var youtubeUrl = 'https://www.youtube.com/embed/' + props.video.id.videoId;
   return (
   <div className="video-player">
