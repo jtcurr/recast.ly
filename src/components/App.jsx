@@ -18,12 +18,6 @@ class App extends React.Component {
       videos: window.exampleVideoData,
       current: window.exampleVideoData[0]
     };
-
-    // this.changeVideo = (idx) => {
-    //   this.setState({
-    //     current: this.state.videos[idx]
-    //   });
-    // };
   }
 
   changeVideo(idx) {
@@ -32,10 +26,28 @@ class App extends React.Component {
     });
   }
 
-  render() {  
+  componentDidMount() {
+    this.getYouTube('react js');
+  }
+
+  getYouTube(query) {
+    var data = {
+      key: this.props.API_KEY,
+      query: query
+    };
+
+    this.props.searchYouTube(data, (videos) => {
+      this.setState({
+        videos: videos,
+        current: videos[0]
+      });
+    });
+  }
+
+  render() {
     return (
       <div>
-        <Nav />
+        <Nav doSearch={ this.getYouTube.bind(this) } />
         <div className="col-md-7">
           <VideoPlayer video={ this.state.current } />
         </div>

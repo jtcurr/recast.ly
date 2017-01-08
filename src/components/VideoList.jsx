@@ -2,20 +2,6 @@ var VideoList = (props) => (
   <div className="video-list media">
 
   { props.videos.map( video => <VideoListEntry video={video} videos={props.videos} changeState= { props.changeState }/> ) }
-
-
-
-  { /*
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-  */ }
   </div>
 );
 

@@ -13,7 +13,6 @@ var VideoListEntry = (props) => {
     props.changeState(idxWeClicked);
 
   };
-
   return (
     <div className="video-list-entry" >
       <div className="media-left media-middle">
